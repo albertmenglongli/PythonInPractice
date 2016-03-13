@@ -31,11 +31,11 @@ class ContentHandler(NullHandler):
             print "!!!!! Lack of content for report with title: {}".format(report.title) 
         super(ContentHandler, self).handle(report)
 
-if __name__ == "__main__":
-    reports = [Report("Python in Practice", "A book about OO design for python and etc.", str(datetime.now())),
-                Report("Alpha Go wins", "Alpha Go win three times", str(datetime.now())),
-                Report("Python is cool", "", str(datetime.now()))]
+reports = [Report("Python in Practice", "A book about OO design for python and etc.", str(datetime.now())),
+            Report("Alpha Go wins", "Alpha Go win three times", str(datetime.now())),
+            Report("Python is cool", "", str(datetime.now()))]
 
+if __name__ == "__main__":
     handler = TitleHandler(ContentHandler())
     for r in reports:
         handler.handle(r)
