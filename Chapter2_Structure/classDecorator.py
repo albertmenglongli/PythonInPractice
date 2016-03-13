@@ -27,8 +27,6 @@ class Book(object):
         self.title = title
         self.price = price
         self.number = 1
-
-b1 =  Book("Harry Potter", 25.0)
-print b1.title
-
-print Book.__dict__.items()
+if __name__ == "__main__":
+    b1 =  Book("Harry Potter", 25.0)
+    print b1.title

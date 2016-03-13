@@ -28,6 +28,7 @@ class Book(object):
     def __init__(self, title):
         self.title = title
 
-print Book("Game of the Thrown").title
-print Book("12").title
+if __name__ == "__main__":
+    print Book("Game of the Thrown").title
+    print Book("12").title
 
