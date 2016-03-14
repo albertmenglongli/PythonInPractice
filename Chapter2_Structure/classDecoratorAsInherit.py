@@ -16,7 +16,7 @@ def say_hello_world(Class):
 @say_hello_world
 class Child(object):
     
-    def __init(self):
+    def __init__(self):
         pass
 
 Child().say_hello()
