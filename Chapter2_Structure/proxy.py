@@ -1,15 +1,16 @@
 class Calculator(object):
     """docstring for Calculator"""
+
     def __init__(self, init_num=None):
         super(Calculator, self).__init__()
         if init_num:
-            self.result = init_num 
+            self.result = init_num
         else:
             self.result = 0
 
     @property
     def result(self):
-        return self._result_cached    
+        return self._result_cached
 
     @result.setter
     def result(self, value):
@@ -26,11 +27,13 @@ class Calculator(object):
     def clear(self):
         self.result = 0
 
+
 class CalProxy(object):
     """
     docstring for CalProxy
     this proxy introduce cach, multi add/minus method, commands mode for lazy calculating
     """
+
     def __init__(self, CalculatorClass, init_num=None):
         super(CalProxy, self).__init__()
         self.Calculator = CalculatorClass
@@ -63,10 +66,10 @@ class CalProxy(object):
 
     def clear(self):
         self.commands = [self.commands[0]]
-        self._result_cached = None    
+        self._result_cached = None
 
 myCal = CalProxy(Calculator)
-myCal.add(1,2,3,4)
+myCal.add(1, 2, 3, 4)
 myCal.minus(20)
 print myCal.result
 
@@ -75,5 +78,5 @@ print myCal.result
 
 myCal.clear()
 print myCal.result
-myCal.add(1,2)
+myCal.add(1, 2)
 print myCal.result

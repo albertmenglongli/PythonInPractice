@@ -4,15 +4,20 @@ def is_non_empty_str(name, value):
     if not bool(value):
         raise ValueError("{name} may not be empty".format(name=name))
 
+
 class Ensure(object):
+
     def __init__(self, validate):
         self.validate = validate
+
 
 def do_ensure(Class):
     def make_property(name, attribute):
         privateName = "__" + name
+
         def getter(self):
             return getattr(self, privateName)
+
         def setter(self, value):
             attribute.validate(name, value)
             setattr(self, privateName, value)
@@ -22,13 +27,14 @@ def do_ensure(Class):
             make_property(name, attribute)
     return Class
 
+
 @do_ensure
 class Book(object):
     title = Ensure(is_non_empty_str)
+
     def __init__(self, title):
         self.title = title
 
 if __name__ == "__main__":
     print Book("Game of the Thrown").title
     print Book("12").title
-

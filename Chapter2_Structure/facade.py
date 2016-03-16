@@ -1,5 +1,6 @@
 class Archive(object):
     """docstring for Archive"""
+
     def __init__(self, filename):
         super(Archive, self).__init__()
         self._names = None
@@ -15,7 +16,7 @@ class Archive(object):
     def filename(self, name):
         self.close()
         self.__filename = name
-   
+
     def close(self):
         if self._file is not None:
             self._file.close()
@@ -29,5 +30,3 @@ class Archive(object):
 
 with Archive("test") as f:
     print f.filename
-
-        

@@ -1,6 +1,6 @@
-def getRates(refresh = False):
+def getRates(refresh=False):
     if refresh is True:
-        getRates.rates={}
+        getRates.rates = {}
     if getRates.rates:
         return getRates.rates
     getRates.rates['US'] = 6

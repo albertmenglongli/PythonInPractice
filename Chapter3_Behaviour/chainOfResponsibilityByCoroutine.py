@@ -1,6 +1,7 @@
 from chainOfResponsibility import Report, reports
 import functools
 
+
 def coroutine(function):
     """
     this decorator will run the first next of the generator
@@ -12,6 +13,7 @@ def coroutine(function):
         return generator
     return wrapper
 
+
 @coroutine
 def title_handler(successor=None):
     while True:
@@ -19,6 +21,8 @@ def title_handler(successor=None):
         print report.title
         if successor:
             successor.send(report)
+
+
 @coroutine
 def content_handler(successor=None):
     while True:
