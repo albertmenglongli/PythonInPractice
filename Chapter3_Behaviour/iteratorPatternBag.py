@@ -48,4 +48,3 @@ print "apple" in bag
 
 for item in bag:
     print item
-print end - start
