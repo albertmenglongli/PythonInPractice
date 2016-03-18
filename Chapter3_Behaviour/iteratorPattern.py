@@ -66,3 +66,8 @@ for president in iter(President(), None):
     print(president, end=", ")
 print()
 
+for president in iter(President(), "Bill Clinto"):
+    print(president, end=", ")
+print()
+
+
