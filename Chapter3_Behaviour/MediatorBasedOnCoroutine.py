@@ -34,10 +34,8 @@ class Form(object):
 
     @coroutine
     def __update_ui_mediator(self, successor=None):
-        cnt = 0
         while True:
-            cnt += 1
-            widget = (yield cnt)
+            widget = (yield)
             if widget is not None:
                 self.okButton.enabled = (
                     bool(self.nameText.text) and bool(self.emailText.text))
