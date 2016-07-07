@@ -16,11 +16,12 @@ def coroutine(function):
 
 @coroutine
 def gen_handler(concrete_handle_method, successor=None):
-    while True:
-        report = (yield)
-        concrete_handle_method(report)
-        if successor:
-            successor.send(report)
+    try:
+        while True:
+            report = (yield)
+            concrete_handle_method(report)
+            if successor:
+                successor.send(report)
 
 
 def check_title(report):
