@@ -22,7 +22,9 @@ def gen_handler(concrete_handle_method, successor=None):
             concrete_handle_method(report)
             if successor:
                 successor.send(report)
-
+   except GeneratorExit:
+       if successor:
+           successor.close()
 
 def check_title(report):
     print report.title
